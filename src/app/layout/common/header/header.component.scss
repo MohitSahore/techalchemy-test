@@ -1,0 +1,102 @@
+.header {
+
+    margin-bottom: 30px;
+
+    .back-arrow {
+        display: inline-block;
+        cursor: pointer;
+        background: #503E9D;
+        border-radius: 10px;
+        width: 32px;
+        height: 32px;
+        text-align: center;
+        line-height: 28px;
+
+        img {
+            width: 8px;
+            height: 10px;
+        }
+    }
+
+    .cart {
+        float: right;
+        background: #FB6D3A;
+        border-radius: 10px;
+        width: 32px;
+        height: 32px;
+        text-align: center;
+        line-height: 28px;
+
+        img {
+            width: 8px;
+            height: 10px;
+        }
+    }
+    .filter{
+        float: right;
+        background: #503E9D;
+        border-radius: 10px;
+        width: 32px;
+        height: 32px;
+        text-align: center;
+        line-height: 28px;
+        margin-right: 16px;
+
+        img {
+            width: 8px;
+            height: 10px;
+        }
+    }
+    .search {
+        float: right;
+        margin-top: -8px;
+        position: relative;
+
+        .global-search {
+            background: #F7F7F7;
+            border-radius: 10px;
+            width: 385px;
+            height: 50px;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 24px;
+            color: #626264;
+            border: none;
+            margin-right: 16px;
+            padding-left: 40px;
+            position: relative;
+        }
+    
+        img {
+            position: absolute;
+            left: 14px;
+            top: 17px;
+            width: 15px;
+            height: 15px;
+            z-index: 99;
+        }
+
+    }
+    .arrow-up-down {
+        float: right;
+        margin-right: 20px;
+    }
+
+    .text-header {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 24px;
+        color: #182135;
+        float: right;
+        margin-top: 2px;
+        margin-right: 12px;
+    }
+    .icon {
+        float: right;
+        margin-top: 4px;
+        margin-right: 12px;
+    }
+    
+}

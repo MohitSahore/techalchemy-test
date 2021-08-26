@@ -1,0 +1,95 @@
+<ng-container *ngIf="!isLoading">
+    <div class="detail">
+        <div class="detail-content">
+            <div class="name">
+                {{detail?.restaurantName}}
+            </div>
+            <div class="desc">
+                {{detail?.restaurantDescription}}
+            </div>
+            <div class="hours-number-url">
+                <img src="/assets/images/detail/timing.png" style="vertical-align: super;">
+
+                <div class="hours">
+                    <div *ngFor="let hours of detail?.openingHours;let last = last">
+                        {{hours}}<span *ngIf="!last">,</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="hours-number-url">
+                <img src="/assets/images/detail/call.png">
+                {{detail?.contactNumber}}
+            </div>
+            <div class="hours-number-url">
+                <img src="/assets/images/detail/vector.png">
+                {{detail?.websiteUrl}}
+            </div>
+        </div>
+        <div class="detail-image">
+            <img [src]="detail?.restaurantImage" *ngIf="detail?.restaurantImage">
+        </div>
+        <br style="clear: both;">
+    </div>
+</ng-container>
+
+<ng-container *ngIf="!!isLoading">
+    <div class="skeleton">
+        <div class="detail">
+            <div class="detail-content">
+                <p class="w-100 mb-3 border-radius-0" style="height: 40px"></p>
+                <p class="w-100 mb-4 border-radius-0" style="height: 100px;"></p>
+
+                <p class="w-100 mb-3 border-radius-0" style="height: 30px"></p>
+                <p class="w-100 mb-3 border-radius-0"></p>
+                <p class="w-100 mb-3 border-radius-0"></p>
+            </div>
+            <div class="detail-image">
+                <img style="width: 100%;">
+            </div>
+            <br style="clear: both;">
+        </div>
+    </div>
+</ng-container>
+
+<div class="row">
+    <div class="col-12">
+        <hr>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <ul class="categories">
+            <li>All</li>
+            <li>Baked (2)</li>
+            <li>Sweet (4)</li>
+            <li>Hot Dish (29)</li>
+        </ul>
+    </div>
+</div>
+
+<div class="main-title">Menu</div>
+
+<ng-container *ngIf="!isLoading; else skeleton">
+    <div class="row" *ngIf="!isLoading">
+        <div class="col-12 col-md-4 menu-detail" *ngFor="let data of [{},{},{},{},{},{}]">
+            <img src="/assets/images/detail/category-image.png">
+
+            <div class="name">
+                Chicken Grill
+                <span>£19.80</span>
+            </div>
+        </div>
+    </div>
+</ng-container>
+<ng-template #skeleton>
+    <div class="skeleton" *ngIf="!!isLoading">
+        <div class="row">
+            <div class="col-12 col-md-4 menu-detail" *ngFor="let data of [{},{},{},{},{},{}]">
+                <img>
+                <p class="w-100 mb-2 border-radius-0"></p>
+            </div>
+        </div>
+    </div>
+</ng-template>

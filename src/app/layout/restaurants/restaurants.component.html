@@ -1,0 +1,60 @@
+<div class="main-title">Category</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <ng-container *ngIf="!isLoading">
+            <ul class="categories">
+                <li *ngFor="let data of allCategories">
+                    <div class="image-style"><img [src]="data?.image"></div>
+                    {{data?.name}}
+                </li>
+            </ul>
+        </ng-container>
+
+        <ng-container *ngIf="!!isLoading">
+            <ul class="categories skeleton">
+                <li *ngFor="let data of ['','','','']">
+                    <img style="width: 30px;height: 30px;display: inline-block;vertical-align: top;" class="mr-2 border-radius-0">
+                    <p style="width: 100px;display: inline-block;"></p>
+                </li>
+            </ul>
+        </ng-container>
+    </div>
+</div>
+
+<div class="main-title main-title-restaurant"> Restaurants</div>
+
+<ng-container *ngIf="!isLoading; else skeleton">
+    <div class="row">
+        <div class="col-12 col-md-4 restaurant-listing" *ngFor="let data of allRestaurants"
+            [routerLink]="['/restaurant', data?.id]">
+            <img [src]="data?.restaurantImage">
+
+            <div class="name">
+                {{data?.restaurantName}}
+                <span class="open" *ngIf="data?.isOpen">Open Now</span>
+                <span class="close" *ngIf="!data?.isOpen">Closed</span>
+            </div>
+
+            <div class="description">
+                {{data?.restaurantDescription}}
+            </div>
+
+        </div>
+    </div>
+</ng-container>
+
+<ng-template #skeleton>
+    <div class="skeleton">
+        <div class="row">
+            <div class="col-12 col-md-4 restaurant-listing" *ngFor="let item of [{},{},{},{},{},{},{},{},{},{},{},{}]">
+
+                <img>
+
+                <p class="w-100 mb-2 border-radius-0"></p>
+
+                <p class="w-100 mb-5 border-radius-0" style="height: 50px;"></p>
+            </div>
+        </div>
+    </div>
+</ng-template>

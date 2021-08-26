@@ -1,0 +1,8 @@
+.side-bar {
+    width: 304px;
+}
+.main {
+    width: calc(100% - 304px);
+    margin-left: 304px;
+    padding: 32px;
+}
